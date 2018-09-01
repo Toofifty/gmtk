@@ -27,8 +27,17 @@
             <kind>1</kind>
             <string>//move to player
 
-move_towards_point(oPlayer1.x,oPlayer1.y,20);
+// projectile speed
+start_speed = 10;
 
+// degrees to move randomly when hitting JAMES
+richochet_random = 30;
+
+if (distance_to_object(oGam) &lt; distance_to_object(oJames)) {
+    move_towards_point(oGam.x, oGam.y, start_speed);
+} else {
+    move_towards_point(oJames.x, oJames.y, start_speed);
+}
 </string>
           </argument>
         </arguments>
@@ -51,11 +60,18 @@ move_towards_point(oPlayer1.x,oPlayer1.y,20);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//destroy on wall collision
-
-if place_meeting(x,y,oWall)
-{
-    instance_destroy();    
+            <string>
+if (place_meeting(x, y, oShield)) {
+    // get deflect angle
+    direction += oShield.image_angle
+    
+} else if (place_meeting(x, y, oJames)) {
+    // random angle
+    direction = direction - 180 - richochet_random / 2 + random(richochet_random);
+    
+} else if (place_meeting(x, y, oCollision)) {
+    // destroy on wall collision
+    instance_destroy();
 }
 </string>
           </argument>

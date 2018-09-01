@@ -8,6 +8,33 @@
   <parentName>oPlayer</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+
+can_move = true;
+
+last_shield_angle = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="87">
       <action>
         <libid>1</libid>
@@ -25,7 +52,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player_jump();
+            <string>if (can_move) player_jump();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="83">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_create(x, y, oShield);
+
+can_move = false;
+
+oShield.image_angle = last_shield_angle;
 </string>
           </argument>
         </arguments>
@@ -48,7 +102,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>right_key_down = true;
+            <string>if (can_move) right_key_down = true;
+
+facing = 'right';
 </string>
           </argument>
         </arguments>
@@ -71,7 +127,36 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>left_key_down = true;
+            <string>if (can_move) left_key_down = true;
+
+facing = 'left';
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="83">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>last_shield_angle = oShield.image_angle;
+
+instance_destroy(oShield);
+
+can_move = true;
 </string>
           </argument>
         </arguments>

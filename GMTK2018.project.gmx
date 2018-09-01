@@ -6,8 +6,10 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\sProjectile</sprite>
     <sprite>sprites\sPlayer1</sprite>
     <sprite>sprites\sWall</sprite>
+    <sprite>sprites\sBad1</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -15,13 +17,15 @@
     <script>scripts\init.gml</script>
   </scripts>
   <objects name="objects">
+    <object>objects\oProjectile</object>
     <object>objects\oWall</object>
     <object>objects\oPlayer</object>
     <object>objects\oPlayer1</object>
     <object>objects\oCollision</object>
+    <object>objects\oBad1</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\Projectile_test</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

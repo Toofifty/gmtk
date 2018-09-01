@@ -68,7 +68,7 @@ if (left_key_down) {
     vx -= move_speed;
 }
 
-vy += global.grav / room_speed;
+//vy += global.grav / room_speed;
 
 if (place_meeting(x, y + vy, oCollision)) {
     vy = 0;

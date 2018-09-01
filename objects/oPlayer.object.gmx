@@ -46,6 +46,7 @@ facing = 'right';
 
 heal_interval = room_speed * 5;
 regen_amount = 5;
+global.picked_up = false;
 
 // start regen
 alarm[0] = heal_interval;

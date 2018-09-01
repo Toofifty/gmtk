@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>oEntity</parentName>
+  <parentName>oCollision</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,36 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-
-// velocity
-vx = 0;
-vy = 0;
-
-move_speed = 3;
-
-right_key_down = false;
-left_key_down = false;
-
-max_jumps = 2;
-jumps = 0;
-
-jump_force = 8;
-max_jump_force = 8;
-
-facing = 'right';
-
-heal_interval = room_speed * 5;
-regen_amount = 5;
-
-// start regen
-alarm[0] = heal_interval;
+            <string>e_health = 100;
+max_health = 100;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -71,62 +49,16 @@ alarm[0] = heal_interval;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// player regen
+            <string>// draw sprite
+draw_sprite(sprite_index, -1, x, y);
 
-e_health += regen_amount;
+// draw red health
 
-if (e_health &gt; max_health) {
-    e_health = max_health;
-}
+draw_sprite(sHealthRed, -1, x, y - 30);
 
-alarm[0] = heal_interval;
-global.picked_up = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>vx = 0;
-if (right_key_down) {
-    vx += move_speed;
-}
-if (left_key_down) {
-    vx -= move_speed;
-}
+// draw green health
 
-vy += global.grav / room_speed;
-
-if (place_meeting(x, y + vy, oCollision)) {
-    vy = 0;
-    jumps = 0;
-}
-
-if (place_meeting(x + vx, y, oCollision)) {
-    vx = 0;
-}
-
-// add any modifiers to vx here
-// vx += xxxx
-
-x += vx;
-y += vy;
+draw_sprite_part(sHealthGreen, -1, 0, 0, 32 * (e_health / 100), 8, x - 16, y - 34);
 </string>
           </argument>
         </arguments>

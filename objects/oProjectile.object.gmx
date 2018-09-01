@@ -80,6 +80,12 @@ if (place_meeting(x, y, oShield)) {
 } else if (place_meeting(x, y, oJames)) {
     // random angle
     direction = direction - 180 - richochet_random / 2 + random(richochet_random);
+    oJames.e_health -= 5;
+    
+} else if (place_meeting(x, y, oEntity)) {
+    inst = instance_place(x, y, oEntity);
+    inst.e_health -= 10;
+    instance_destroy();
     
 } else if (place_meeting(x, y, oCollision)) {
     // destroy on wall collision

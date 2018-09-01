@@ -35,9 +35,12 @@ right_key_down = false;
 left_key_down = false;
 
 max_jumps = 2;
+jumps = 0;
 
 jump_force = 8;
 max_jump_force = 8;
+
+facing = 'right';
 </string>
           </argument>
         </arguments>
@@ -68,7 +71,7 @@ if (left_key_down) {
     vx -= move_speed;
 }
 
-//vy += global.grav / room_speed;
+vy += global.grav / room_speed;
 
 if (place_meeting(x, y + vy, oCollision)) {
     vy = 0;

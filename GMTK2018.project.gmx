@@ -7,18 +7,22 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sPlayer1</sprite>
+    <sprite>sprites\sPlayer2</sprite>
     <sprite>sprites\sWall</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\init.gml</script>
+    <script>scripts\player_jump.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\oWall</object>
     <object>objects\oPlayer</object>
-    <object>objects\oPlayer1</object>
+    <object>objects\oJames</object>
     <object>objects\oCollision</object>
+    <object>objects\oGam</object>
+    <object>objects\oCamera</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

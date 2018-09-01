@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprite>sprites\sProjectile</sprite>
     <sprite>sprites\sPlayer1</sprite>
+    <sprite>sprites\sPlayer2</sprite>
     <sprite>sprites\sWall</sprite>
     <sprite>sprites\sBad1</sprite>
   </sprites>
@@ -15,13 +16,16 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\init.gml</script>
+    <script>scripts\player_jump.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\oProjectile</object>
     <object>objects\oWall</object>
     <object>objects\oPlayer</object>
-    <object>objects\oPlayer1</object>
+    <object>objects\oJames</object>
     <object>objects\oCollision</object>
+    <object>objects\oGam</object>
+    <object>objects\oCamera</object>
     <object>objects\oBad1</object>
   </objects>
   <rooms name="rooms">

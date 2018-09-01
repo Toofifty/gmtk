@@ -28,7 +28,6 @@
     <object>objects\oGam</object>
     <object>objects\oCamera</object>
     <object>objects\oBad1</object>
-    <object>objects\oJamesDummy</object>
     <object>objects\oShield</object>
   </objects>
   <rooms name="rooms">

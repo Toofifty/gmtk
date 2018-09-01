@@ -16,6 +16,10 @@
     <sprite>sprites\sHealthGreen</sprite>
     <sprite>sprites\sJamesWalk</sprite>
     <sprite>sprites\sGamCarry</sprite>
+    <sprite>sprites\sPickupPrompt</sprite>
+    <sprite>sprites\sThrowPrompt</sprite>
+    <sprite>sprites\sJamesInAir</sprite>
+    <sprite>sprites\sJamesImpact</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

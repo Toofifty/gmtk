@@ -36,7 +36,7 @@ move_speed = 3;
 right_key_down = false;
 left_key_down = false;
 
-max_jumps = 2;
+max_jumps = 1;
 jumps = 0;
 
 jump_force = 8;
@@ -103,12 +103,18 @@ alarm[0] = heal_interval;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mv = 0;
+            <string>hit_ground = false;
+can_hit_ground = false;
+mv = 0;
 if (right_key_down) {
     mv += move_speed;
 }
 if (left_key_down) {
     mv -= move_speed;
+}
+
+if (vy &gt; 0) {
+    can_hit_ground = true;
 }
 
 vy += global.grav / room_speed;
@@ -117,6 +123,9 @@ if (place_meeting(x, y + vy, oCollision)) {
     vy = 0;
     jumps = 0;
     vx *= 0.95;
+    if (can_hit_ground) {
+        hit_ground = true;
+    }
 }
 
 if (place_meeting(x + vx + mv, y, oCollision)) {

@@ -64,15 +64,56 @@ sprite_state = 'idle';
             <string>//placed on top of gam when picked up
 event_inherited();
 
-if (right_key_down || left_key_down) {
-    sprite_index = sJamesWalk;
-} else {
-    sprite_index = sJames;
+if (!can_move) {
+    if (oShield.image_angle &gt; 90) {
+        facing = 'left';
+    } else {
+        facing = 'right';
+    }
+}
+
+if (hit_ground) {
+    sprite_index = sJamesImpact;
+}
+
+if (sprite_index != sJamesImpact) {
+    if (vy != 0) {
+        sprite_index = sJamesInAir;
+    } else if (right_key_down || left_key_down) {
+        sprite_index = sJamesWalk;
+    } else {
+        sprite_index = sJames;
+    }
 }
 
 if (global.picked_up == true) {
     x = oGam.x;
     y = oGam.y - 24;   
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (sprite_index == sJamesImpact) {
+    sprite_index = sJames;
 }
 </string>
           </argument>
@@ -96,7 +137,9 @@ if (global.picked_up == true) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (can_move) player_jump();
+            <string>if (can_move) {
+    player_jump();
+}
 </string>
           </argument>
         </arguments>

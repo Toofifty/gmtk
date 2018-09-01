@@ -8,7 +8,7 @@
   <parentName>oPlayer</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="9" enumb="40">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,9 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-
-other_player = oJames;
+            <string>//pick up james
+if (distance_to_object(oJames) &lt; 64)
+{
+    if(global.picked_up = true)
+    {
+        global.picked_up = false;
+    }
+    global.picked_up = true;        
+}
 </string>
           </argument>
         </arguments>

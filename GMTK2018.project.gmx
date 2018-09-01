@@ -36,6 +36,7 @@
     <object>objects\oEnemy</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Carry_Test</room>
     <room>rooms\Test_things</room>
     <room>rooms\Projectile_test</room>
   </rooms>

@@ -80,6 +80,7 @@ if (e_health &gt; max_health) {
 }
 
 alarm[0] = heal_interval;
+global.picked_up = false;
 </string>
           </argument>
         </arguments>

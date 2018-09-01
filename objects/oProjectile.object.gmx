@@ -28,7 +28,7 @@
             <string>//move to player
 
 // projectile speed
-start_speed = 10;
+start_speed = 2;
 
 // degrees to move randomly when hitting JAMES
 richochet_random = 30;
@@ -60,10 +60,22 @@ if (distance_to_object(oGam) &lt; distance_to_object(oJames)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>image_angle = direction;
+
+
+
 if (place_meeting(x, y, oShield)) {
+
+    direction = oShield.image_angle;
+    // inst = instance_place (x, y, oShield);     // &lt;-- Instance it hits
+    // n = point_direction(inst.x - 16 * cos(inst.image_angle), inst.y - 16 * sin(inst.image_angle), x, y);                       // &lt;-- direction from instances pov
+    // direction = (2 * n) - direction - 180;                                       //&lt;-- new direction
     // get deflect angle
-    direction += oShield.image_angle
+    // direction += oShield.image_angle;
+    // direction -= sign(angle_difference(oShield.image_angle, direction)) * (180 - (abs(angle_difference(oShield.image_angle, direction)) * 2));
+    // direction = oShield.image_angle + direction + 180;
+    // direction = direction * -1 + (90 - oShield.image_angle);
+    //direction = oShield.image_angle + angle_difference(oShield.image_angle, direction);
     
 } else if (place_meeting(x, y, oJames)) {
     // random angle

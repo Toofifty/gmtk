@@ -18,6 +18,7 @@
   <scripts name="scripts">
     <script>scripts\init.gml</script>
     <script>scripts\player_jump.gml</script>
+    <script>scripts\collision_normal.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\oProjectile</object>

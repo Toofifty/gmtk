@@ -30,6 +30,8 @@
 can_move = true;
 
 last_shield_angle = 0;
+
+other_player = oGam;
 </string>
           </argument>
         </arguments>

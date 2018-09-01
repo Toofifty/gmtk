@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = room_speed / 10;
+            <string>interval = room_speed / 2;
+
+alarm[0] = interval;
 </string>
           </argument>
         </arguments>
@@ -51,7 +53,7 @@
             <string>
 instance_create(x, y, oProjectile);
 
-alarm[0] = room_speed / 10;
+alarm[0] = interval;
 </string>
           </argument>
         </arguments>

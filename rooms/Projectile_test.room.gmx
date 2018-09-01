@@ -59,7 +59,7 @@
     <instance objName="oWall" x="320" y="384" name="inst_A1650FB5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWall" x="352" y="384" name="inst_76B02CD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWall" x="384" y="352" name="inst_B8EC0D17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oPlayer1" x="367" y="367" name="inst_8BE1A802" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="367" y="367" name="inst_8BE1A802" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBad1" x="366" y="176" name="inst_9EF6C968" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBad1" x="210" y="235" name="inst_939E960C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBad1" x="528" y="237" name="inst_04A1F538" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>// update Room View
 
-view_wview = 1280;
-view_hview = 720;
+view_wview = 640;
+view_hview = 360;
 
 view_wport = 1280;
 view_hport = 720;
@@ -91,8 +91,6 @@ if (shakeTime &gt; 0) {
 } else {
     shakeMagnitude = 1;
 }
-
-show_debug_message(x);
 </string>
           </argument>
         </arguments>

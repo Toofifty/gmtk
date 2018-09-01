@@ -7,13 +7,15 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sProjectile</sprite>
-    <sprite>sprites\sPlayer1</sprite>
-    <sprite>sprites\sPlayer2</sprite>
+    <sprite>sprites\sJames</sprite>
+    <sprite>sprites\sGam</sprite>
     <sprite>sprites\sWall</sprite>
     <sprite>sprites\sBad1</sprite>
     <sprite>sprites\sShield</sprite>
     <sprite>sprites\sHealthRed</sprite>
     <sprite>sprites\sHealthGreen</sprite>
+    <sprite>sprites\sJamesWalk</sprite>
+    <sprite>sprites\sGamCarry</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -36,8 +38,8 @@
     <object>objects\oEnemy</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Carry_Test</room>
     <room>rooms\Test_things</room>
+    <room>rooms\Carry_Test</room>
     <room>rooms\Projectile_test</room>
   </rooms>
   <help>

@@ -33,6 +33,9 @@ start_speed = 2;
 // degrees to move randomly when hitting JAMES
 richochet_random = 30;
 
+//  prevent hitting James twice
+hit_james = false;
+
 if (distance_to_object(oGam) &lt; distance_to_object(oJames)) {
     move_towards_point(oGam.x, oGam.y, start_speed);
 } else {
@@ -78,9 +81,12 @@ if (place_meeting(x, y, oShield)) {
     //direction = oShield.image_angle + angle_difference(oShield.image_angle, direction);
     
 } else if (place_meeting(x, y, oJames)) {
-    // random angle
-    direction = direction - 180 - richochet_random / 2 + random(richochet_random);
-    oJames.e_health -= 5;
+    if (!hit_james) {
+        // random angle
+        direction = direction - 180 - richochet_random / 2 + random(richochet_random);
+        oJames.e_health -= 5;
+        hit_james = true;
+    }
     
 } else if (place_meeting(x, y, oEntity)) {
     inst = instance_place(x, y, oEntity);

@@ -32,7 +32,7 @@ max_health = 100;
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,10 +49,7 @@ max_health = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// draw sprite
-draw_sprite(sprite_index, -1, x, y);
-
-// draw red health
+            <string>// draw red health
 
 draw_sprite(sHealthRed, -1, x, y - 30);
 

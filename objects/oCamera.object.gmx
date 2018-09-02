@@ -49,6 +49,8 @@ shakeMagnitude = 0;
 
 earthquakeTime = 0;
 earthquakeMag = 0;
+
+sound_global_volume(0.01);
 </string>
           </argument>
         </arguments>

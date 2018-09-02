@@ -73,6 +73,7 @@
       <sprite>sprites\sRockwalllight</sprite>
       <sprite>sprites\sRockwalldark</sprite>
     </sprites>
+    <sprite>sprites\sReadyTick</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

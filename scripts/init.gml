@@ -1,5 +1,5 @@
 global.grav = 28;
-global.pickup_dist = 48;
+global.pickup_dist = 64;
 global.action_dist = 16;
 
 score = 0;

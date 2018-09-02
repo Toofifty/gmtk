@@ -61,6 +61,8 @@ global.picked_up = false;
 
 max_health = 60;
 e_health = max_health;
+
+ready_for_next = false;
 </string>
           </argument>
         </arguments>
@@ -118,6 +120,12 @@ if (place_meeting(x + vx + mv, y, oCollision)) {
     mv = 0;
 }
 
+if (place_meeting(x, y, oCollision)) {
+    inst = instance_place(x, y, oCollision);
+    dir = point_direction(inst.x, inst.y, x, y);
+    move_outside_solid(dir, -1);
+}
+
 // add any modifiers to vx here
 // vx += xxxx
 
@@ -146,7 +154,7 @@ if (being_revived) {
         is_down = false;
         can_move = true;
         revive_progress = 0;
-        e_health = (80 / 100) * max_health;
+        e_health = (25 / 100) * max_health;
     }
 } else {
     revive_progress = 0;
@@ -191,6 +199,9 @@ if (health_bar_transparent) {
     draw_set_alpha(1);
 }
 
+if (ready_for_next) {
+    draw_sprite(sReadyTick, -1, x, y - 40);
+}
 </string>
           </argument>
         </arguments>

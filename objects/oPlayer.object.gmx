@@ -36,7 +36,7 @@ move_speed = 3;
 right_key_down = false;
 left_key_down = false;
 
-max_jumps = 2;
+max_jumps = 1;
 jumps = 0;
 
 jump_force = 8;
@@ -46,6 +46,7 @@ facing = 'right';
 
 heal_interval = room_speed * 5;
 regen_amount = 5;
+global.picked_up = false;
 
 // start regen
 alarm[0] = heal_interval;
@@ -103,12 +104,18 @@ global.picked_up = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vx = 0;
+            <string>hit_ground = false;
+can_hit_ground = false;
+mv = 0;
 if (right_key_down) {
-    vx += move_speed;
+    mv += move_speed;
 }
 if (left_key_down) {
-    vx -= move_speed;
+    mv -= move_speed;
+}
+
+if (vy &gt; 0) {
+    can_hit_ground = true;
 }
 
 vy += global.grav / room_speed;
@@ -116,17 +123,30 @@ vy += global.grav / room_speed;
 if (place_meeting(x, y + vy, oCollision)) {
     vy = 0;
     jumps = 0;
+    vx *= 0.95;
+    if (can_hit_ground) {
+        hit_ground = true;
+    }
 }
 
-if (place_meeting(x + vx, y, oCollision)) {
+if (place_meeting(x + vx + mv, y, oCollision)) {
     vx = 0;
+    mv = 0;
 }
 
 // add any modifiers to vx here
 // vx += xxxx
 
-x += vx;
+x += vx + mv;
 y += vy;
+
+vx *= 0.98;
+
+if (facing == 'right') {
+    image_xscale = 1;
+} else {
+    image_xscale = -1;
+}
 </string>
           </argument>
         </arguments>

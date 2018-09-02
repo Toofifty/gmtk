@@ -27,12 +27,16 @@
             <kind>1</kind>
             <string>e_health = 100;
 max_health = 100;
+
+health_bar_transparent = false;
+
+hit_ground = false;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,6 +53,11 @@ max_health = 100;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>// draw red health
+
+if (health_bar_transparent) {
+    draw_set_alpha(0.4);
+}
             <string>// draw sprite
 draw_sprite(sprite_index, -1, x, y);
 
@@ -59,6 +68,10 @@ draw_sprite(sHealthRed, -1, x, y - 30);
 // draw green health
 
 draw_sprite_part(sHealthGreen, -1, 0, 0, 32 * (e_health / 100), 8, x - 16, y - 34);
+
+if (health_bar_transparent) {
+    draw_set_alpha(1);
+}
 </string>
           </argument>
         </arguments>

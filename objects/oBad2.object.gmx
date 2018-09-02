@@ -107,6 +107,7 @@ switch(state){
     }
     case(states.idle):
     {
+        speed = 0;
         if (distance_to_object(oGam &lt; 100) || distance_to_object(oJames &lt; 100)) {state = states.chasing;}
         
     }

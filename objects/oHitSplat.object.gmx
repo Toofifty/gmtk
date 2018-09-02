@@ -86,7 +86,7 @@ if (n &gt; 20) {
             <string>draw_set_alpha(0.9);
 
 if (is_boost) {
-    draw_set_color(c_blue);
+    draw_set_colour(c_blue);
 } else if (amount &gt; 0) {
     draw_set_colour(c_green);
 } else {
@@ -101,7 +101,8 @@ if (amount &gt; 0) {
 
 draw_text_transformed(x - 8, y, text, 0.5, 0.5, 0);
 
-draw_set_alpha(0.9);
+draw_set_colour(c_white);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

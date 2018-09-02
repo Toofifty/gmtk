@@ -6,7 +6,7 @@ enum states
 {
     idle,
     chasing,
-    fleeing    
+    fleeing        
 }
 
 

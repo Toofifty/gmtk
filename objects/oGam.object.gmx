@@ -29,10 +29,11 @@
 
 other_player = oJames;
 
-jump_force = 5;
+jump_force = 9;
+move_speed = 3;
 
-throw_force_x = 8;
-throw_force_y = 6;
+throw_force_x = 12;
+throw_force_y = 9;
 
 image_speed = 0.2;
 
@@ -62,7 +63,11 @@ health_bar_transparent = true;
             <string>event_inherited();
 
 if (global.picked_up) {
-    sprite_index = sGamCarry;
+    if (can_move &amp;&amp; (right_key_down || left_key_down)) {
+        sprite_index = sGamCarryWalk;
+    } else {
+        sprite_index = sGamCarry;
+    }
     health_bar_transparent = true;
 } else if (vy != 0) {
     sprite_index = sGamInAir;
@@ -98,16 +103,28 @@ if (global.picked_up) {
             <kind>1</kind>
             <string>event_inherited();
 
+// @ - James
+// | - Gam
+// $%^&amp;*( - QEWASD
+// )_{} - up, left, down, right
+
+// draw_text(x, y+20, "@|#$%^&amp;*()_-+{}|");
+
+draw_set_halign(fa_center);
+
 if (!global.picked_up) {
-    if (distance_to_object(oJames) &lt; 64) {
+    if (distance_to_object(oRoomDoor) &lt; global.action_dist) {
+        draw_text(x, y + 30, '{ enter');
+    } else if (distance_to_object(oJames) &lt; global.pickup_dist) {
         if (oJames.is_down) {
-            draw_sprite(sRevivePrompt, -1, x, y + 30);
+            draw_text(x, y + 30, "{ Revive @");
         } else if (!is_down) {
-            draw_sprite(sPickupPrompt, -1, x, y + 30);
+            draw_text(x, y + 30, "{ Pickup @");
         }
     }
 } else {
-    draw_sprite(sThrowPrompt, -1, x, y + 30);
+    draw_text(x, y + 30, ") Throw @");
+    draw_text(x, y + 42, "{ Drop @");
 }
 </string>
           </argument>
@@ -161,7 +178,12 @@ if (distance_to_object(oJames) &lt; 64 &amp;&amp; !is_down) {
     } else {
         // pickup
         global.picked_up = !global.picked_up;
-        audio_play_sound(grunt1,3,false);
+
+        if (global.picked_up &amp;&amp; oJames.shield_out) {
+            with (oJames) {
+                put_away_shield();
+            }
+        }
     }
 }
 </string>

@@ -30,8 +30,8 @@
 view_wview = 640;
 view_hview = 360;
 
-view_wport = 1280;
-view_hport = 720;
+view_wport = 1920;
+view_hport = 1080;
 
 view_object = id;
 view_hborder = view_wview / 2;
@@ -74,8 +74,8 @@ earthquakeMag = 0;
             <string>xTarget = (oGam.x + oJames.x) / 2;
 yTarget = (oGam.y + oJames.y) / 2;
 
-dist = point_distance(oGam.x, oGam.y, oJames.x, oJames.y) + 200;
-view_wview = clamp(dist, 640, 1280);
+dist = point_distance(oGam.x, oGam.y, oJames.x, oJames.y) + 300;
+view_wview = clamp(dist, 640, 4000);
 view_hview = view_wview * (360 / 640);
 
 // xTarget = clamp(xTarget, oPlayer.x - xBorder, oPlayer.x + xBorder);
@@ -95,6 +95,52 @@ if (shakeTime &gt; 0) {
 } else {
     shakeMagnitude = 1;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="122">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>window_set_fullscreen(!window_get_fullscreen());
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>window_set_fullscreen(false);
 </string>
           </argument>
         </arguments>

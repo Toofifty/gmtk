@@ -54,6 +54,13 @@
     <sprite>sprites\sBigCoin</sprite>
     <sprite>sprites\sBad2Attack</sprite>
     <sprite>sprites\sBad2Projectile</sprite>
+    <sprite>sprites\sFont</sprite>
+    <sprite>sprites\sJamesShield</sprite>
+    <sprite>sprites\sRoomDoor</sprite>
+    <sprite>sprites\sTrapDoor</sprite>
+    <sprite>sprites\sButton</sprite>
+    <sprite>sprites\sButtonPressed</sprite>
+    <sprite>sprites\sGamCarryWalk</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -66,6 +73,7 @@
     <script>scripts\get_boost.gml</script>
     <script>scripts\drop_random_item.gml</script>
     <script>scripts\add_score.gml</script>
+    <script>scripts\put_away_shield.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\oProjectile</object>
@@ -78,6 +86,8 @@
     <object>objects\oEntity</object>
     <object>objects\oHitSplat</object>
     <object>objects\oBad2Projectile</object>
+    <object>objects\oRoomDoor</object>
+    <object>objects\oScore</object>
     <objects name="Pickups">
       <object>objects\oBigCoin</object>
       <object>objects\oCoin</object>
@@ -96,12 +106,32 @@
       <object>objects\oWallSmall</object>
       <object>objects\oWall</object>
       <object>objects\oWallSmallDecoration</object>
+      <object>objects\oButton</object>
+      <object>objects\oTrapDoor</object>
+    </objects>
+    <objects name="IntroLevel">
+      <object>objects\oTextControlsJames</object>
+      <object>objects\oTextControlsGam</object>
+      <object>objects\oTextCoins</object>
+      <object>objects\oButton1</object>
+      <object>objects\oButton3</object>
+      <object>objects\oButton2</object>
+      <object>objects\oTrapDoor1</object>
+      <object>objects\oTrapDoor2</object>
+      <object>objects\oTextThrow</object>
+      <object>objects\oTextDeflect</object>
+      <object>objects\oBad1SuperDrop</object>
+      <object>objects\oTextHealth</object>
+      <object>objects\oRoomDoor1</object>
+      <object>objects\oTextBoostJump</object>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Intro_Level</room>
     <room>rooms\Test_things</room>
     <room>rooms\Carry_Test</room>
     <room>rooms\Projectile_test</room>
+    <room>rooms\Level_Template</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,55 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>max_health = 100;
-e_health = max_health;
+            <string>draw_set_halign(fa_center);
 
-health_bar_transparent = false;
-
-facing = 'right';
-
-hit_ground = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="73">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>// draw red health
-
-if (health_bar_transparent) {
-    image_alpha = 0.4;
-}
-
-// draw red health
-
-health_scale = floor((32 * max_health) /  100) / 32;
-
-draw_sprite_ext(sHealthRed, -1, x, y - 30, health_scale, 1, image_angle, image_blend, image_alpha);
-
-// draw green health
-x_start = ceil(x - health_scale * 16);
-draw_sprite_part_ext(sHealthGreen, -1, 0, 0, 32 * (e_health / max_health), 8, x_start, y - 34, health_scale, 1, image_blend, image_alpha);
-
-if (health_bar_transparent) {
-    image_alpha = 1;
-}
+draw_text(x, y, 'Only | Gam can#pickup items');
 </string>
           </argument>
         </arguments>

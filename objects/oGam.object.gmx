@@ -161,6 +161,7 @@ if (distance_to_object(oJames) &lt; 64 &amp;&amp; !is_down) {
     } else {
         // pickup
         global.picked_up = !global.picked_up;
+        audio_play_sound(grunt1,3,false);
     }
 }
 </string>
@@ -219,6 +220,7 @@ facing = 'right';
         } else if (left_key_down) {
             oJames.vx -= throw_force_x;
         }
+        audio_play_sound(grunt2,4,false);
     } else {
         player_jump();
     }

@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>//player being attacked
     
+ricochet[0] = ricochet1;
+ricochet[1] = ricochet3;
+arraynum = irandom(1)
 
 
 // projectile speed
@@ -69,10 +72,10 @@ else {
             <string>image_angle = direction;
 
 
-
 if (place_meeting(x, y, oShield)) {
 
     direction = oShield.image_angle;
+    audio_play_sound(ricochet[arraynum],10,false);
     // inst = instance_place (x, y, oShield);     // &lt;-- Instance it hits
     // n = point_direction(inst.x - 16 * cos(inst.image_angle), inst.y - 16 * sin(inst.image_angle), x, y);                       // &lt;-- direction from instances pov
     // direction = (2 * n) - direction - 180;                                       //&lt;-- new direction

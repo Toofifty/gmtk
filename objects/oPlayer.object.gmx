@@ -134,8 +134,10 @@ if (place_meeting(x, y + vy, oCollision)) {
     vy = 0;
     jumps = 0;
     vx *= 0.95;
+    
     if (can_hit_ground) {
         hit_ground = true;
+        audio_play_sound(thud1,10,false);
     }
 }
 

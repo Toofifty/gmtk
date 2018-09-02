@@ -170,6 +170,7 @@ if (oGam.is_down &amp;&amp; distance_to_object(oGam) &lt; 64) {
             <kind>1</kind>
             <string>if (can_move) {
     player_jump();
+    
 }
 </string>
           </argument>

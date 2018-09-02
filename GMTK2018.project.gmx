@@ -4,7 +4,21 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\grunt1</sound>
+    <sound>sound\ricochet1</sound>
+    <sound>sound\pickup</sound>
+    <sound>sound\grunt2</sound>
+    <sound>sound\ricochet3</sound>
+    <sound>sound\jump1</sound>
+    <sound>sound\music1</sound>
+    <sound>sound\music2</sound>
+    <sound>sound\music3</sound>
+    <sound>sound\music4</sound>
+    <sound>sound\thud1</sound>
+    <sound>sound\hurt1</sound>
+    <sound>sound\hurt2</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\sProjectile</sprite>
     <sprite>sprites\sJames</sprite>
@@ -62,7 +76,6 @@
     <object>objects\oCamera</object>
     <object>objects\oShield</object>
     <object>objects\oEntity</object>
-    <object>objects\oItem</object>
     <object>objects\oHitSplat</object>
     <object>objects\oBad2Projectile</object>
     <objects name="Pickups">
@@ -71,6 +84,7 @@
       <object>objects\oHealthBoost</object>
       <object>objects\oMiniHealth</object>
       <object>objects\oHealthItem</object>
+      <object>objects\oItem</object>
     </objects>
     <objects name="Enemies">
       <object>objects\oBad2</object>

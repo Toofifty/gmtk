@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,30 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// update Room View
+            <string>random_vel = 5;
 
-view_wview = 640;
-view_hview = 360;
+vy = -random(random_vel);
+vx = -random_vel / 2 + random(random_vel);
 
-view_wport = 1280;
-view_hport = 720;
-
-view_object = id;
-view_hborder = view_wview / 2;
-view_vborder = view_hview / 2;
-
-xTarget = 0;
-yTarget = 0;
-
-xBorder = 150;
-yBorder = 80;
-
-//Screenshake Stuff
-shakeTime   = 0;
-shakeMagnitude = 0;
-
-earthquakeTime = 0;
-earthquakeMag = 0;
+image_speed = 0.2;
 </string>
           </argument>
         </arguments>
@@ -71,29 +53,43 @@ earthquakeMag = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>xTarget = (oGam.x + oJames.x) / 2;
-yTarget = (oGam.y + oJames.y) / 2;
+            <string>vy += global.grav / room_speed;
 
-dist = point_distance(oGam.x, oGam.y, oJames.x, oJames.y) + 200;
-view_wview = clamp(dist, 640, 1280);
-view_hview = view_wview * (360 / 640);
+if (place_meeting(x, y + vy, oCollision)) {
+    vy = 0;
+    vx *= 0.95;
+}
 
-// xTarget = clamp(xTarget, oPlayer.x - xBorder, oPlayer.x + xBorder);
-// yTarget = clamp(yTarget, oPlayer.y - yBorder, oPlayer.y + yBorder);
+if (place_meeting(x + vx, y, oCollision)) {
+    vx = 0;
+}
 
-x = lerp(x, xTarget, .3);
-y = lerp(y, yTarget, .3);
-
-// add Screenshake
-if (shakeTime &gt; 0) {
-    shakeTime--;
-    x += random_range(-shakeMagnitude, shakeMagnitude);
-    y += random_range(-shakeMagnitude, shakeMagnitude);
-    if (shakeMagnitude &gt; 1) {
-        shakeMagnitude -= 1;
-    }
-} else {
-    shakeMagnitude = 1;
+x += vx;
+y += vy;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (sprite_index == sItemPop) {
+    instance_destroy();
 }
 </string>
           </argument>

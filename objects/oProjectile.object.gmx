@@ -80,20 +80,21 @@ if (place_meeting(x, y, oShield)) {
     // direction = direction * -1 + (90 - oShield.image_angle);
     //direction = oShield.image_angle + angle_difference(oShield.image_angle, direction);
     
-} else if (place_meeting(x, y, oJames)) {
+} else if (place_meeting(x, y, oJames) &amp;&amp; !oJames.is_down) {
     if (!hit_james) {
         // random angle
         direction = direction - 180 - richochet_random / 2 + random(richochet_random);
-        oJames.e_health -= 5;
+        with (oJames) {
+            get_hit(5);
+        }
         hit_james = true;
     }
-    // random angle
-    direction = direction - 180 - richochet_random / 2 + random(richochet_random);
-    oJames.e_health -= 5;
     
 } else if (place_meeting(x, y, oEntity)) {
     inst = instance_place(x, y, oEntity);
-    inst.e_health -= 10;
+    with (inst) {
+        get_hit(10);
+    }
     instance_destroy();
     
 } else if (place_meeting(x, y, oCollision)) {

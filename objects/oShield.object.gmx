@@ -28,7 +28,7 @@
             <string>rotate_left = false;
 rotate_right = false;
 
-rotate_speed = 2;
+rotate_speed = 6;
 </string>
           </argument>
         </arguments>

@@ -30,7 +30,7 @@
 
 
 // projectile speed
-start_speed = 2;
+start_speed = 3;
 
 // degrees to move randomly when hitting JAMES
 richochet_random = 30;
@@ -40,10 +40,10 @@ hit_james = false;
 
 if (distance_to_object(oGam) &lt; distance_to_object(oJames)) {
     move_towards_point(oGam.x, oGam.y, start_speed);
-    } 
+} 
 else {
     move_towards_point(oJames.x, oJames.y, start_speed);
-    }
+}
 </string>
           </argument>
         </arguments>

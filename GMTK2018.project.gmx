@@ -40,6 +40,9 @@
     <sprite>sprites\sBigCoin</sprite>
     <sprite>sprites\sBad2Attack</sprite>
     <sprite>sprites\sBad2Projectile</sprite>
+    <sprite>sprites\sFont</sprite>
+    <sprite>sprites\sJamesShield</sprite>
+    <sprite>sprites\sRoomDoor</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -77,11 +80,15 @@
     <object>objects\oCoin</object>
     <object>objects\oBigCoin</object>
     <object>objects\oBad2Projectile</object>
+    <object>objects\oRoomDoor</object>
+    <object>objects\oScore</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Intro_Level</room>
     <room>rooms\Test_things</room>
     <room>rooms\Carry_Test</room>
     <room>rooms\Projectile_test</room>
+    <room>rooms\Level_Template</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

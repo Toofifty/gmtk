@@ -131,8 +131,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Test_things</room>
     <room>rooms\Intro_Level</room>
+    <room>rooms\Test_things</room>
     <room>rooms\Carry_Test</room>
     <room>rooms\Projectile_test</room>
     <room>rooms\Level_Template</room>

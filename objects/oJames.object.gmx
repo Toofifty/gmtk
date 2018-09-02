@@ -149,9 +149,9 @@ if (global.picked_up == true) {
 
 if (!global.picked_up) {
     if (oGam.is_down &amp;&amp; distance_to_object(oGam) &lt; global.pickup_dist) {
-        draw_text(x, y + 30, '* revive |');
+        draw_text(x, y + 30, '* Revive |');
     } else if (distance_to_object(oRoomDoor) &lt; global.action_dist) {
-        draw_text(x, y + 30, '* enter');
+        draw_text(x, y + 30, '* Ready');
     }
 }
 </string>
@@ -232,8 +232,7 @@ if (!is_down &amp;&amp; !global.picked_up) {
     if (place_meeting(x, y, oRoomDoor) &amp;&amp; !is_down) {
         ready_for_next = true;
         if (oGam.ready_for_next) {
-            inst = instance_place(x, y, oRoomDoor);
-            room_next(inst.next_room);
+            room_goto_next();
         }
     } else if (oGam.is_down &amp;&amp; distance_to_object(oGam) &lt; 64) {
         oGam.being_revived = true;

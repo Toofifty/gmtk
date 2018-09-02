@@ -114,7 +114,7 @@ draw_set_halign(fa_center);
 
 if (!global.picked_up) {
     if (place_meeting(x, y, oRoomDoor)) {
-        draw_text(x, y + 30, '{ enter');
+        draw_text(x, y + 30, '{ Ready');
     } else if (distance_to_object(oJames) &lt; global.pickup_dist) {
         if (oJames.is_down) {
             draw_text(x, y + 30, "{ Revive @");
@@ -175,8 +175,7 @@ if (!global.picked_up) {
 if (place_meeting(x, y, oRoomDoor) &amp;&amp; !is_down) {
     ready_for_next = true;
     if (oJames.ready_for_next) {
-        inst = instance_place(x, y, oRoomDoor);
-        room_next(inst.next_room);
+        room_goto_next();
     }
 } else if (distance_to_object(oJames) &lt; global.pickup_dist &amp;&amp; !is_down) {
     if (oJames.is_down) {

@@ -52,8 +52,8 @@ is_boost = false;
             <kind>1</kind>
             <string>// make movement slower for bigger amounts
 
-change = abs(5 / amount);
-if (change &lt; 1) change = 1;
+change = abs(1 / amount);
+if (change &gt; 1) change = 1;
 
 y += change;
 n += change;

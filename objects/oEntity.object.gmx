@@ -33,6 +33,8 @@ health_bar_transparent = false;
 facing = 'right';
 
 hit_ground = false;
+
+move_speed = 2;
 </string>
           </argument>
         </arguments>

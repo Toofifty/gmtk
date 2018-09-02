@@ -76,13 +76,14 @@ if (!can_move &amp;&amp; !is_down) {
 
 if (hit_ground) {
     sprite_index = sJamesImpact;
+    image_speed = 0.7;
 }
 
-image_speed = 0.2;
 if (shield_out) {
     sprite_index = sJamesShield;
     image_speed = 0.1;
 } else if (sprite_index != sJamesImpact) {
+    image_speed = 0.2;
     if (vy != 0) {
         sprite_index = sJamesInAir;
     } else if (can_move &amp;&amp; (right_key_down || left_key_down)) {
@@ -231,6 +232,8 @@ if (!global.picked_up) {
 if (!is_down &amp;&amp; !global.picked_up) {
     if (place_meeting(x, y, oRoomDoor) &amp;&amp; !is_down) {
         ready_for_next = true;
+        inst = instance_place(x, y, oRoomDoor);
+        inst.is_open = true;
         if (oGam.ready_for_next) {
             room_goto_next();
         }

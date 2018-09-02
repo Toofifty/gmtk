@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 
-if (place_meeting(x, y, oGam) &amp;&amp; sprite_index != sItemPop) {
-    player = instance_place(x, y, oGam);
+if (place_meeting(x, y, oPlayer) &amp;&amp; sprite_index != sItemPop) {
+    player = instance_place(x, y, oPlayer);
     with (player) {
         add_score(1);
     }

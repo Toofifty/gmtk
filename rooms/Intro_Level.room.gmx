@@ -109,11 +109,11 @@ audio_play_sound(music1,1,true);</code>
     <instance objName="oWall" x="544" y="528" name="inst_2CE93662" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWall" x="400" y="496" name="inst_F29AD921" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWall" x="288" y="464" name="inst_E8FE4409" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oJames" x="576" y="256" name="inst_3B1DDD89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oJames" x="560" y="240" name="inst_3B1DDD89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWall" x="592" y="272" name="inst_641AF3AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWall" x="624" y="272" name="inst_795AC4E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWall" x="656" y="272" name="inst_4570D8D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGam" x="672" y="256" name="inst_A8FA2AED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGam" x="688" y="240" name="inst_A8FA2AED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWallSmall" x="544" y="272" name="inst_AC3BD5E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWallSmall" x="688" y="272" name="inst_5903D902" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWallSmall" x="528" y="272" name="inst_FD946DBF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1205,7 +1205,6 @@ audio_play_sound(music1,1,true);</code>
     <instance objName="oCoin" x="304" y="304" name="inst_46EFCA3D" locked="0" code="vx = 0;&#xA;hspeed = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oTextControlsJames" x="464" y="112" name="inst_A3723745" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oTextControlsGam" x="640" y="112" name="inst_51F5C454" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oTextCoins" x="256" y="240" name="inst_EBB1B9E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWallSmallDecoration" x="96" y="336" name="inst_FCEF7A88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWallSmallDecoration" x="96" y="352" name="inst_2A72A987" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWallSmallDecoration" x="96" y="368" name="inst_11B46251" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -2510,7 +2509,7 @@ audio_play_sound(music1,1,true);</code>
     <instance objName="oWallSmall" x="48" y="624" name="inst_2318A80F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWallSmall" x="48" y="608" name="inst_3EF03462" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWallSmall" x="48" y="592" name="inst_686C1F2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oRoomDoor1" x="176" y="720" name="inst_73807BE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRoomDoor1" x="176" y="688" name="inst_73807BE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWallSmall" x="496" y="912" name="inst_D57E96BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWallSmall" x="496" y="896" name="inst_B720D2AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWallSmall" x="496" y="880" name="inst_EB240F0D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

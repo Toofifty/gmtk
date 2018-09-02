@@ -63,6 +63,7 @@
     <sprite>sprites\sButtonPressed</sprite>
     <sprite>sprites\sGamCarryWalk</sprite>
     <sprites name="environment">
+      <sprite>sprites\sGround</sprite>
       <sprite>sprites\sTree1</sprite>
       <sprite>sprites\sRock1</sprite>
       <sprite>sprites\sWall</sprite>
@@ -72,10 +73,15 @@
       <sprite>sprites\sTree2</sprite>
       <sprite>sprites\sRockwalllight</sprite>
       <sprite>sprites\sRockwalldark</sprite>
+      <sprite>sprites\sGroundSmall</sprite>
     </sprites>
     <sprite>sprites\sReadyTick</sprite>
+    <sprite>sprites\sRoomDoorOpening</sprite>
+    <sprite>sprites\sRoomDoorOpen</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bTitleScreen</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\init.gml</script>
@@ -128,6 +134,8 @@
       <object>objects\oButton</object>
       <object>objects\oTrapDoor</object>
       <object>objects\oRock1</object>
+      <object>objects\oGround</object>
+      <object>objects\oGroundSmall</object>
     </objects>
     <objects name="IntroLevel">
       <object>objects\oTextControlsJames</object>
@@ -145,10 +153,16 @@
       <object>objects\oRoomDoor1</object>
       <object>objects\oTextBoostJump</object>
     </objects>
+    <objects name="Level1">
+      <object>objects\oButton4</object>
+      <object>objects\oTrapDoor3</object>
+    </objects>
+    <object>objects\oTitleScreen</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Level1</room>
+    <room>rooms\Title_Room</room>
     <room>rooms\Intro_Level</room>
+    <room>rooms\Level1</room>
     <room>rooms\Test_things</room>
     <room>rooms\Carry_Test</room>
     <room>rooms\Projectile_test</room>

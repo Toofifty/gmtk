@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+//death sounds
+death[0] = death1;
+death[1] = death2;
+arraynum = irandom(1);
 
 // velocity
 vx = 0;
@@ -131,6 +135,8 @@ if (facing == 'right') {
 if (e_health &lt;= 0) {
     can_move = false;
     is_down = true;
+    
+    
 }
 
 if (being_revived) {

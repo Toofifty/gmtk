@@ -242,7 +242,7 @@ facing = 'right';
         } else if (left_key_down) {
             oJames.vx -= throw_force_x;
         }
-        audio_play_sound(grunt2,4,false);
+        audio_play_sound(yeet1,4,false);
     } else {
         player_jump();
     }

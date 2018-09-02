@@ -113,7 +113,7 @@ if (global.picked_up) {
 draw_set_halign(fa_center);
 
 if (!global.picked_up) {
-    if (distance_to_object(oRoomDoor) &lt; global.action_dist) {
+    if (place_meeting(x, y, oRoomDoor)) {
         draw_text(x, y + 30, '{ enter');
     } else if (distance_to_object(oJames) &lt; global.pickup_dist) {
         if (oJames.is_down) {
@@ -172,7 +172,13 @@ if (!global.picked_up) {
           <argument>
             <kind>1</kind>
             <string>//pick up james
-if (distance_to_object(oJames) &lt; 64 &amp;&amp; !is_down) {
+if (place_meeting(x, y, oRoomDoor) &amp;&amp; !is_down) {
+    ready_for_next = true;
+    if (oJames.ready_for_next) {
+        inst = instance_place(x, y, oRoomDoor);
+        room_next(inst.next_room);
+    }
+} else if (distance_to_object(oJames) &lt; global.pickup_dist &amp;&amp; !is_down) {
     if (oJames.is_down) {
         oJames.being_revived = true;
     } else {

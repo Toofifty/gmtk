@@ -47,6 +47,7 @@
     <sprite>sprites\sButton</sprite>
     <sprite>sprites\sButtonPressed</sprite>
     <sprite>sprites\sGamCarryWalk</sprite>
+    <sprite>sprites\sReadyTick</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

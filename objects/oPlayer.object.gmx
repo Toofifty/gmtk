@@ -57,6 +57,8 @@ global.picked_up = false;
 
 max_health = 60;
 e_health = max_health;
+
+ready_for_next = false;
 </string>
           </argument>
         </arguments>
@@ -183,6 +185,9 @@ if (health_bar_transparent) {
     draw_set_alpha(1);
 }
 
+if (ready_for_next) {
+    draw_sprite(sReadyTick, -1, x, y - 40);
+}
 </string>
           </argument>
         </arguments>

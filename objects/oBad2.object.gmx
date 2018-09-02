@@ -27,8 +27,9 @@
             <kind>1</kind>
             <string>event_inherited();
 
+
 image_speed = 0.2;
-player_chasing = oGam;
+
 
 state = states.idle;
 interval = 2*room_speed;
@@ -80,8 +81,8 @@ alarm[0] = interval;
           <argument>
             <kind>1</kind>
             <string>if (facing = 'right')
-{ shoot_side = -1;}
-else { shoot_side = 1;}
+{ shoot_side = 1;}
+else { shoot_side = -1;}
 instance_create(x+shoot_side*32,y,oBad2Projectile)
 
 alarm[0] = interval;

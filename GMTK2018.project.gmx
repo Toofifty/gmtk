@@ -9,17 +9,29 @@
     <sprite>sprites\sProjectile</sprite>
     <sprite>sprites\sJames</sprite>
     <sprite>sprites\sGam</sprite>
+    <sprite>sprites\sGamDown</sprite>
     <sprite>sprites\sWall</sprite>
     <sprite>sprites\sBad1</sprite>
     <sprite>sprites\sShield</sprite>
     <sprite>sprites\sHealthRed</sprite>
     <sprite>sprites\sHealthGreen</sprite>
+    <sprite>sprites\sHealthYellow</sprite>
     <sprite>sprites\sJamesWalk</sprite>
     <sprite>sprites\sGamCarry</sprite>
     <sprite>sprites\sPickupPrompt</sprite>
+    <sprite>sprites\sRevivePrompt</sprite>
     <sprite>sprites\sThrowPrompt</sprite>
     <sprite>sprites\sJamesInAir</sprite>
     <sprite>sprites\sJamesImpact</sprite>
+    <sprite>sprites\sJamesDown</sprite>
+    <sprite>sprites\sWallSmall</sprite>
+    <sprite>sprites\sWallSmallDecoration</sprite>
+    <sprite>sprites\sHealthItem</sprite>
+    <sprite>sprites\sHealthItemPop</sprite>
+    <sprite>sprites\sGamWalk</sprite>
+    <sprite>sprites\sGamInAir</sprite>
+    <sprite>sprites\sHealthBoost</sprite>
+    <sprite>sprites\sItemPop</sprite>
     <sprite>sprites\sBad2</sprite>
     <sprite>sprites\sBad3</sprite>
   </sprites>
@@ -29,6 +41,10 @@
     <script>scripts\init.gml</script>
     <script>scripts\player_jump.gml</script>
     <script>scripts\collision_normal.gml</script>
+    <script>scripts\get_hit.gml</script>
+    <script>scripts\get_healed.gml</script>
+    <script>scripts\get_boost.gml</script>
+    <script>scripts\drop_random_item.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\oProjectile</object>
@@ -42,6 +58,12 @@
     <object>objects\oShield</object>
     <object>objects\oEntity</object>
     <object>objects\oEnemy</object>
+    <object>objects\oWallSmall</object>
+    <object>objects\oHealthItem</object>
+    <object>objects\oItem</object>
+    <object>objects\oWallSmallDecoration</object>
+    <object>objects\oHitSplat</object>
+    <object>objects\oHealthBoost</object>
     <object>objects\oBad3</object>
     <object>objects\oBad2</object>
   </objects>

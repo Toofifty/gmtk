@@ -29,8 +29,12 @@
 
 other_player = oJames;
 
+jump_force = 5;
+
 throw_force_x = 8;
 throw_force_y = 6;
+
+image_speed = 0.2;
 
 health_bar_transparent = true;
 </string>
@@ -60,6 +64,12 @@ health_bar_transparent = true;
 if (global.picked_up) {
     sprite_index = sGamCarry;
     health_bar_transparent = true;
+} else if (vy != 0) {
+    sprite_index = sGamInAir;
+} else if (can_move &amp;&amp; (right_key_down || left_key_down)) {
+    sprite_index = sGamWalk;
+} else if (is_down) {
+    sprite_index = sGamDown;
 } else {
     sprite_index = sGam;
     health_bar_transparent = false;
@@ -90,11 +100,38 @@ if (global.picked_up) {
 
 if (!global.picked_up) {
     if (distance_to_object(oJames) &lt; 64) {
-        draw_sprite(sPickupPrompt, -1, x, y + 30);
+        if (oJames.is_down) {
+            draw_sprite(sRevivePrompt, -1, x, y + 30);
+        } else if (!is_down) {
+            draw_sprite(sPickupPrompt, -1, x, y + 30);
+        }
     }
 } else {
     draw_sprite(sThrowPrompt, -1, x, y + 30);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="72">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>drop_random_item();
 </string>
           </argument>
         </arguments>
@@ -118,9 +155,13 @@ if (!global.picked_up) {
           <argument>
             <kind>1</kind>
             <string>//pick up james
-if (distance_to_object(oJames) &lt; 64)
-{
-    global.picked_up = !global.picked_up;
+if (distance_to_object(oJames) &lt; 64 &amp;&amp; !is_down) {
+    if (oJames.is_down) {
+        oJames.being_revived = true;
+    } else {
+        // pickup
+        global.picked_up = !global.picked_up;
+    }
 }
 </string>
           </argument>
@@ -169,16 +210,18 @@ facing = 'right';
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.picked_up) {
-    global.picked_up = false;
-    oJames.vy = -throw_force_y;
-    if (right_key_down) {
-        oJames.vx += throw_force_x;
-    } else if (left_key_down) {
-        oJames.vx -= throw_force_x;
+            <string>if (can_move &amp;&amp; !is_down) {
+    if (global.picked_up) {
+        global.picked_up = false;
+        oJames.vy = -throw_force_y;
+        if (right_key_down) {
+            oJames.vx += throw_force_x;
+        } else if (left_key_down) {
+            oJames.vx -= throw_force_x;
+        }
+    } else {
+        player_jump();
     }
-} else {
-    player_jump();
 }
 </string>
           </argument>
@@ -205,6 +248,31 @@ facing = 'right';
             <string>left_key_down = true;
 
 facing = 'left';
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="40">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (oJames.being_revived) {
+    oJames.being_revived = false;
+}
 </string>
           </argument>
         </arguments>

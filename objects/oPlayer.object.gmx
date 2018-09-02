@@ -42,11 +42,21 @@ jumps = 0;
 jump_force = 8;
 max_jump_force = 8;
 
+can_move = true;
+is_down = false;
+
+being_revived = false;
+revive_progress = 0;
+revive_speed = 1;
+
 facing = 'right';
 
 heal_interval = room_speed * 5;
 regen_amount = 5;
 global.picked_up = false;
+
+max_health = 60;
+e_health = max_health;
 
 // start regen
 alarm[0] = heal_interval;
@@ -74,14 +84,11 @@ alarm[0] = heal_interval;
             <kind>1</kind>
             <string>// player regen
 
-e_health += regen_amount;
-
-if (e_health &gt; max_health) {
-    e_health = max_health;
+if (!is_down) {
+    get_healed(regen_amount);
 }
-
+    
 alarm[0] = heal_interval;
-global.picked_up = false;
 </string>
           </argument>
         </arguments>
@@ -112,6 +119,9 @@ if (right_key_down) {
 }
 if (left_key_down) {
     mv -= move_speed;
+}
+if (!can_move) {
+    mv = 0;
 }
 
 if (vy &gt; 0) {
@@ -147,6 +157,64 @@ if (facing == 'right') {
 } else {
     image_xscale = -1;
 }
+
+if (e_health &lt;= 0) {
+    can_move = false;
+    is_down = true;
+}
+
+if (being_revived) {
+    revive_progress += revive_speed;
+    if (revive_progress &gt;= 100) {
+        being_revived = false;
+        is_down = false;
+        can_move = true;
+        revive_progress = 0;
+        e_health = (80 / 100) * max_health;
+    }
+} else {
+    revive_progress = 0;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+
+// draw revival progress over health bar
+
+if (health_bar_transparent) {
+    draw_set_alpha(0.4);
+}
+
+health_scale = max_health /  100;
+
+x_start = floor(x - health_scale * 16);
+draw_sprite_part_ext(sHealthYellow, -1, 0, 0, 32 * (revive_progress / 100), 8, x_start, y - 34, health_scale, 1, image_blend, image_alpha);
+
+if (health_bar_transparent) {
+    draw_set_alpha(1);
+}
+
 </string>
           </argument>
         </arguments>

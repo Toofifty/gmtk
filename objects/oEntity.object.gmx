@@ -30,6 +30,8 @@ e_health = max_health;
 
 health_bar_transparent = false;
 
+facing = 'right';
+
 hit_ground = false;
 </string>
           </argument>

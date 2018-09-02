@@ -52,8 +52,9 @@ alarm[0] = interval;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-instance_create(x + 32, y, oProjectile);
+            <string>shoot_side = global.player_attacked.x - x;
+shoot_side1 = sign(shoot_side)
+instance_create(x+shoot_side1*32,y,oProjectile)
 
 alarm[0] = interval;
 </string>

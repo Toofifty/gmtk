@@ -28,6 +28,7 @@
             <string>event_inherited();
 
 image_speed = 0.2;
+player_chasing = oGam;
 
 state = states.idle;
 interval = 2*room_speed;
@@ -116,28 +117,43 @@ switch(state){
     case(states.chasing):
     {
         if (distance_to_object(oGam) &lt; distance_to_object(oJames)) {
+            player_chasing = oGam;
             mp_potential_step(oGam.x,oGam.y,0.5,false);
-        } 
-        else 
+        }
+        else
         {
+            player_chasing = oJames;
             mp_potential_step(oJames.x,oJames.y,0.5,false);
         }
-        
+
         if (distance_to_object(oGam) &gt; 300 &amp;&amp; distance_to_object(oJames) &gt; 300)
         {
             state = states.idle;
         }
-        
-        if (distance_to_object(oGam) &lt; 32)
+
+        if (distance_to_object(oGam) &lt; 50)
         {
-            
+            state = states.fleeing;
+
         }
     }
     case(states.idle):
     {
         speed = 0;
         if (distance_to_object(oGam &lt; 100) || distance_to_object(oJames &lt; 100)) {state = states.chasing;}
-        
+
+    }
+    case(states.fleeing):
+    {
+      direction = point_direction(x,y,player_chasing.x,player_chasing.y)
+      direction += 180;
+      if( distance_to_object(oGam) &gt; 100 &amp;&amp; distance_to_object(oJames) &gt; 100)
+      {
+
+            state = states.chasing;
+            direction += 180;
+      }
+
     }
 }
 

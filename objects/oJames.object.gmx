@@ -34,7 +34,7 @@ last_shield_angle = 0;
 
 other_player = oGam;
 
-move_speed = 0.5;
+move_speed = 1;
 jump_force = 4;
 
 image_speed = 0.2;
@@ -79,7 +79,11 @@ if (hit_ground) {
 }
 
 if (sprite_index != sJamesImpact) {
-    if (vy != 0) {
+    image_speed = 0.2;
+    if (shield_out) {
+        sprite_index = sJamesShield;
+        image_speed = 0.1;
+    } else if (vy != 0) {
         sprite_index = sJamesInAir;
     } else if (can_move &amp;&amp; (right_key_down || left_key_down)) {
         sprite_index = sJamesWalk;
@@ -143,8 +147,12 @@ if (global.picked_up == true) {
             <kind>1</kind>
             <string>event_inherited();
 
-if (oGam.is_down &amp;&amp; distance_to_object(oGam) &lt; 64) {
-    draw_sprite(sRevivePrompt, -1, x, y + 30);
+if (!global.picked_up) {
+    if (oGam.is_down &amp;&amp; distance_to_object(oGam) &lt; global.pickup_dist) {
+        draw_text(x, y + 30, '* revive |');
+    } else if (distance_to_object(oRoomDoor) &lt; global.action_dist) {
+        draw_text(x, y + 30, '* enter');
+    }
 }
 </string>
           </argument>

@@ -30,8 +30,8 @@
 view_wview = 640;
 view_hview = 360;
 
-view_wport = 1280;
-view_hport = 720;
+view_wport = 1920;
+view_hport = 1080;
 
 view_object = id;
 view_hborder = view_wview / 2;

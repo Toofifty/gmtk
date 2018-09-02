@@ -203,6 +203,7 @@ if (!global.picked_up) {
             <kind>1</kind>
             <string>if (can_move) {
     player_jump();
+    
 }
 </string>
           </argument>

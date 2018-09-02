@@ -90,6 +90,7 @@ y += vy;
             <kind>1</kind>
             <string>if (sprite_index == sItemPop) {
     instance_destroy();
+    audio_play_sound(pickup,2,false);
 }
 </string>
           </argument>

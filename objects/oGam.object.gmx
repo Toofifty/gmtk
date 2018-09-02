@@ -131,7 +131,7 @@ if (!global.picked_up) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>drop_random_item();
+            <string>drop_random_item(200);
 </string>
           </argument>
         </arguments>

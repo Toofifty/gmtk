@@ -31,7 +31,7 @@
 vx = 0;
 vy = 0;
 
-move_speed = 3;
+move_speed = 2;
 
 right_key_down = false;
 left_key_down = false;

@@ -27,12 +27,36 @@
             <kind>1</kind>
             <string>event_inherited();
 
+image_speed = 0.2;
 player_chasing = oGam;
 
 state = states.idle;
 interval = 2*room_speed;
 alarm[0] = interval;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>drop_random_item(5);
 </string>
           </argument>
         </arguments>
@@ -58,7 +82,7 @@ alarm[0] = interval;
             <string>if (facing = 'right')
 { shoot_side = -1;}
 else { shoot_side = 1;}
-instance_create(x+shoot_side*32,y,oProjectile)
+instance_create(x+shoot_side*32,y,oBad2Projectile)
 
 alarm[0] = interval;
 
@@ -86,37 +110,38 @@ alarm[0] = interval;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//move towards nearest player
+            <string>event_inherited();
 
+//move towards nearest player
 switch(state){
     case(states.chasing):
     {
         if (distance_to_object(oGam) &lt; distance_to_object(oJames)) {
             player_chasing = oGam;
             mp_potential_step(oGam.x,oGam.y,0.5,false);
-        } 
-        else 
+        }
+        else
         {
             player_chasing = oJames;
             mp_potential_step(oJames.x,oJames.y,0.5,false);
         }
-        
+
         if (distance_to_object(oGam) &gt; 300 &amp;&amp; distance_to_object(oJames) &gt; 300)
         {
             state = states.idle;
         }
-        
+
         if (distance_to_object(oGam) &lt; 50)
         {
             state = states.fleeing;
-           
+
         }
     }
     case(states.idle):
     {
         speed = 0;
         if (distance_to_object(oGam &lt; 100) || distance_to_object(oJames &lt; 100)) {state = states.chasing;}
-        
+
     }
     case(states.fleeing):
     {
@@ -124,11 +149,11 @@ switch(state){
       direction += 180;
       if( distance_to_object(oGam) &gt; 100 &amp;&amp; distance_to_object(oJames) &gt; 100)
       {
-            
+
             state = states.chasing;
             direction += 180;
       }
-      
+
     }
 }
 

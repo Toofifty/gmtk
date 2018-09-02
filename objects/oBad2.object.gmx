@@ -27,8 +27,6 @@
             <kind>1</kind>
             <string>event_inherited();
 
-player_chasing = oGam;
-
 state = states.idle;
 interval = 2*room_speed;
 alarm[0] = interval;

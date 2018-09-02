@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//move to player
+            <string>//player being attacked
+global.player_attacked = oPlayer;
+
 
 // projectile speed
 start_speed = 2;
@@ -38,8 +40,10 @@ hit_james = false;
 
 if (distance_to_object(oGam) &lt; distance_to_object(oJames)) {
     move_towards_point(oGam.x, oGam.y, start_speed);
+    global.player_attacked = oGam;
 } else {
     move_towards_point(oJames.x, oJames.y, start_speed);
+    global.player_attacked = oJames;
 }
 </string>
           </argument>

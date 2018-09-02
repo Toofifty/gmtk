@@ -20,6 +20,8 @@
     <sprite>sprites\sThrowPrompt</sprite>
     <sprite>sprites\sJamesInAir</sprite>
     <sprite>sprites\sJamesImpact</sprite>
+    <sprite>sprites\sBad2</sprite>
+    <sprite>sprites\sBad3</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -40,6 +42,8 @@
     <object>objects\oShield</object>
     <object>objects\oEntity</object>
     <object>objects\oEnemy</object>
+    <object>objects\oBad3</object>
+    <object>objects\oBad2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Test_things</room>

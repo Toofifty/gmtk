@@ -34,6 +34,12 @@
     <sprite>sprites\sItemPop</sprite>
     <sprite>sprites\sBad2</sprite>
     <sprite>sprites\sBad3</sprite>
+    <sprite>sprites\sBad1Attack</sprite>
+    <sprite>sprites\sMiniHealth</sprite>
+    <sprite>sprites\sCoin</sprite>
+    <sprite>sprites\sBigCoin</sprite>
+    <sprite>sprites\sBad2Attack</sprite>
+    <sprite>sprites\sBad2Projectile</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -45,6 +51,7 @@
     <script>scripts\get_healed.gml</script>
     <script>scripts\get_boost.gml</script>
     <script>scripts\drop_random_item.gml</script>
+    <script>scripts\add_score.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\oProjectile</object>
@@ -66,6 +73,10 @@
     <object>objects\oHealthBoost</object>
     <object>objects\oBad3</object>
     <object>objects\oBad2</object>
+    <object>objects\oMiniHealth</object>
+    <object>objects\oCoin</object>
+    <object>objects\oBigCoin</object>
+    <object>objects\oBad2Projectile</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Test_things</room>

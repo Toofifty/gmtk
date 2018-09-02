@@ -55,28 +55,34 @@
   </scripts>
   <objects name="objects">
     <object>objects\oProjectile</object>
-    <object>objects\oWall</object>
     <object>objects\oPlayer</object>
     <object>objects\oJames</object>
     <object>objects\oCollision</object>
     <object>objects\oGam</object>
     <object>objects\oCamera</object>
-    <object>objects\oBad1</object>
     <object>objects\oShield</object>
     <object>objects\oEntity</object>
-    <object>objects\oEnemy</object>
-    <object>objects\oWallSmall</object>
-    <object>objects\oHealthItem</object>
     <object>objects\oItem</object>
-    <object>objects\oWallSmallDecoration</object>
     <object>objects\oHitSplat</object>
-    <object>objects\oHealthBoost</object>
-    <object>objects\oBad3</object>
-    <object>objects\oBad2</object>
-    <object>objects\oMiniHealth</object>
-    <object>objects\oCoin</object>
-    <object>objects\oBigCoin</object>
     <object>objects\oBad2Projectile</object>
+    <objects name="Pickups">
+      <object>objects\oBigCoin</object>
+      <object>objects\oCoin</object>
+      <object>objects\oHealthBoost</object>
+      <object>objects\oMiniHealth</object>
+      <object>objects\oHealthItem</object>
+    </objects>
+    <objects name="Enemies">
+      <object>objects\oBad2</object>
+      <object>objects\oEnemy</object>
+      <object>objects\oBad3</object>
+      <object>objects\oBad1</object>
+    </objects>
+    <objects name="Environment">
+      <object>objects\oWallSmall</object>
+      <object>objects\oWall</object>
+      <object>objects\oWallSmallDecoration</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Test_things</room>

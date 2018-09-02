@@ -61,7 +61,8 @@ if (distance_to_object(oGam) &lt; distance_to_object(oJames))
 else {player_chasing = oJames;}
 
 if (x - player_chasing.x &gt; 0)
-{ facing = 'left';}
+{ facing = 'left'; show_debug_message("debug 1: facing left");}
+else { facing = 'right'; show_debug_message("debug 2: facing right");}
             
 if (facing == 'right') {
     image_xscale = 1;

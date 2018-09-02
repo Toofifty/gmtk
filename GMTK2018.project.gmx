@@ -38,6 +38,8 @@
     <sprite>sprites\sMiniHealth</sprite>
     <sprite>sprites\sCoin</sprite>
     <sprite>sprites\sBigCoin</sprite>
+    <sprite>sprites\sBad2Attack</sprite>
+    <sprite>sprites\sBad2Projectile</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -74,6 +76,7 @@
     <object>objects\oMiniHealth</object>
     <object>objects\oCoin</object>
     <object>objects\oBigCoin</object>
+    <object>objects\oBad2Projectile</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Test_things</room>

@@ -64,6 +64,7 @@
     <sprite>sprites\sButton</sprite>
     <sprite>sprites\sButtonPressed</sprite>
     <sprite>sprites\sGamCarryWalk</sprite>
+    <sprite>sprites\sReadyTick</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -130,8 +131,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Test_things</room>
     <room>rooms\Intro_Level</room>
+    <room>rooms\Test_things</room>
     <room>rooms\Carry_Test</room>
     <room>rooms\Projectile_test</room>
     <room>rooms\Level_Template</room>

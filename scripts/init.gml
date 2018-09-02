@@ -1,5 +1,6 @@
-globalvar grav;
-grav = 18.6;
+global.grav = 18.6;
+
+score = 0;
 
 enum states 
 {

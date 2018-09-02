@@ -36,6 +36,29 @@ alarm[0] = interval;
         </arguments>
       </action>
     </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>drop_random_item(5);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -84,7 +107,9 @@ alarm[0] = interval;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//move towards nearest player
+            <string>event_inherited();
+
+//move towards nearest player
 switch(state){
     case(states.chasing):
     {

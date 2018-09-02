@@ -52,36 +52,12 @@ alarm[0] = interval;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shoot_side = global.player_attacked.x - x;
-shoot_side1 = sign(shoot_side)
-instance_create(x+shoot_side1*32,y,oProjectile)
+            <string>if (facing = 'right')
+{ shoot_side = -1;}
+else { shoot_side = 1;}
+instance_create(x+shoot_side*32,y,oProjectile)
 
 alarm[0] = interval;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="32">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//creates projectile
-
-instance_create(x, y, oProjectile);
 </string>
           </argument>
         </arguments>

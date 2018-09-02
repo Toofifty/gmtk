@@ -53,9 +53,10 @@ alarm[0] = interval;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shoot_side = global.player_attacked.x - x;
-shoot_side1 = sign(shoot_side)
-instance_create(x+shoot_side1*32,y,oProjectile)
+            <string>if (facing = 'right')
+{ shoot_side = -1;}
+else { shoot_side = 1;}
+instance_create(x+shoot_side*32,y,oProjectile)
 
 alarm[0] = interval;
 
@@ -88,11 +89,11 @@ switch(state){
     case(states.chasing):
     {
         if (distance_to_object(oGam) &lt; distance_to_object(oJames)) {
-            mp_potential_step(oGam.x,oGam.y,0.5,true);
+            mp_potential_step(oGam.x,oGam.y,0.5,false);
         } 
         else 
         {
-            mp_potential_step(oJames.x,oJames.y,0.5,true);
+            mp_potential_step(oJames.x,oJames.y,0.5,false);
         }
         
         if (distance_to_object(oGam) &gt; 300 &amp;&amp; distance_to_object(oJames) &gt; 300)

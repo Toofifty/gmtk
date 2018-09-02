@@ -78,12 +78,12 @@ if (hit_ground) {
     sprite_index = sJamesImpact;
 }
 
-if (sprite_index != sJamesImpact) {
-    image_speed = 0.2;
-    if (shield_out) {
-        sprite_index = sJamesShield;
-        image_speed = 0.1;
-    } else if (vy != 0) {
+image_speed = 0.2;
+if (shield_out) {
+    sprite_index = sJamesShield;
+    image_speed = 0.1;
+} else if (sprite_index != sJamesImpact) {
+    if (vy != 0) {
         sprite_index = sJamesInAir;
     } else if (can_move &amp;&amp; (right_key_down || left_key_down)) {
         sprite_index = sJamesWalk;

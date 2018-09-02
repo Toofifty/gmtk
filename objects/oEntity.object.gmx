@@ -58,6 +58,10 @@ hit_ground = false;
 if (health_bar_transparent) {
     draw_set_alpha(0.4);
 }
+            <string>// draw sprite
+draw_sprite(sprite_index, -1, x, y);
+
+// draw red health
 
 draw_sprite(sHealthRed, -1, x, y - 30);
 
